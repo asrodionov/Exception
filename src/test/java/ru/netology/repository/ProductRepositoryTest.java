@@ -46,11 +46,7 @@ public class ProductRepositoryTest {
 
         int idToRemove = 50;
 
-        NotFoundException ex = new NotFoundException("Element with id: " + idToRemove + " not found");
-
         assertThrows(NotFoundException.class, () -> repository.removeById(idToRemove));
-
-        ex.printStackTrace();
 
         Product[] actual = repository.findAll();
         Product[] expected = new Product[]{first,second,third,fourth,fifth};
